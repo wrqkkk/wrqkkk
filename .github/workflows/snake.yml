@@ -1,8 +1,8 @@
-name: generate animation
+name: generate profile assets
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 0 * * *"
 
   workflow_dispatch:
 
@@ -18,17 +18,21 @@ jobs:
       contents: write
 
     steps:
-      - name: Generate SVG
-        uses: Platane/snk/svg-only@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          github_user_name: wrqkkk
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          python-version: "3.11"
+
+      - name: Generate profile SVG assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: wrqkkk
+        run: python scripts/generate_profile_assets.py
 
-      - name: Push to output branch
+      - name: Publish generated assets
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output
