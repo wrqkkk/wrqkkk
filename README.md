@@ -3,15 +3,15 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/github-contribution-grid-snake-dark.svg"
+      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-dark.svg"
     >
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/github-contribution-grid-snake.svg"
+      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-light.svg"
     >
     <img
-      alt="github contribution grid snake animation"
-      src="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/github-contribution-grid-snake.svg"
+      alt="GitHub contribution graph"
+      src="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-light.svg"
     >
   </picture>
 
@@ -24,15 +24,15 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://streak-stats.demolab.com?user=wrqkkk&amp;theme=tokyonight&amp;v=20260804"
+      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/streak-stats-dark.svg"
     >
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://streak-stats.demolab.com?user=wrqkkk&amp;background=FFFFFF&amp;border=9BE9A8&amp;stroke=D0D7DE&amp;ring=40C463&amp;fire=800080&amp;currStreakNum=800080&amp;sideNums=216E39&amp;currStreakLabel=30A14E&amp;sideLabels=57606A&amp;dates=57606A&amp;v=20260804"
+      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/streak-stats-light.svg"
     >
     <img
-      alt="GitHub Streak Stats"
-      src="https://streak-stats.demolab.com?user=wrqkkk&amp;background=FFFFFF&amp;border=9BE9A8&amp;stroke=D0D7DE&amp;ring=40C463&amp;fire=800080&amp;currStreakNum=800080&amp;sideNums=216E39&amp;currStreakLabel=30A14E&amp;sideLabels=57606A&amp;dates=57606A&amp;v=20260804"
+      alt="GitHub streak statistics"
+      src="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/streak-stats-light.svg"
     >
   </picture>
 
