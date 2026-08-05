@@ -26,11 +26,51 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate profile SVG assets
+      - name: Generate contribution graph and streak assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USER: wrqkkk
         run: python scripts/generate_profile_assets.py
+
+      - name: Generate snake animation
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: wrqkkk
+          outputs: |
+            dist/github-contribution-grid-snake.svg?color_snake=purple
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23a78bfa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Keep contribution cells visible during snake animation
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          paths = [
+              Path("dist/github-contribution-grid-snake.svg"),
+              Path("dist/github-contribution-grid-snake-dark.svg"),
+          ]
+
+          pattern = re.compile(
+              r"(\.c\.c[0-9a-z]+\{fill:var\(--c[0-9]+\);)"
+              r"animation-name:c[0-9a-z]+"
+          )
+
+          for path in paths:
+              svg = path.read_text(encoding="utf-8")
+              updated, replacements = pattern.subn(
+                  r"\1animation-name:none",
+                  svg,
+              )
+              if replacements == 0:
+                  raise RuntimeError(
+                      f"No contribution-cell animations were found in {path}"
+                  )
+              path.write_text(updated, encoding="utf-8")
+              print(f"Froze {replacements} contribution cells in {path}")
+          PY
 
       - name: Publish generated assets
         uses: crazy-max/ghaction-github-pages@v3.1.0
