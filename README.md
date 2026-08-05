@@ -15,23 +15,6 @@
     >
   </picture>
 
-  <br>
-
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-dark.svg"
-    >
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-light.svg"
-    >
-    <img
-      alt="GitHub contribution graph"
-      src="https://raw.githubusercontent.com/wrqkkk/wrqkkk/output/contribution-graph-light.svg"
-    >
-  </picture>
-
 </div>
 
 ## GitHub Activity
